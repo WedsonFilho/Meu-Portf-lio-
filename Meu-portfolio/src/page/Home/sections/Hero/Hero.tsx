@@ -37,8 +37,8 @@ const Hero = () => {
                         
                         </Grid>
                         <Grid size={4} display="flex" justifyContent="center">
-                          <Button color="secondary" variant="outlined" onClick={() => console.log("contato")}> <EmailIcon/>
-                                    Contato</Button>
+                          <Button color="secondary" variant="outlined" onClick={() => console.log("contato")} component = "a" href="mailto:wedson.filho@a.ficr.edu.br"> <EmailIcon style={{ marginRight:"8px"}} />
+                                  Contato</Button>
                         </Grid>
                         </Grid>
                         
