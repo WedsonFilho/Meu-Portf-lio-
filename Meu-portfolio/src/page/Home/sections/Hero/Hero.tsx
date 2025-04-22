@@ -6,13 +6,16 @@ import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 import EmailIcon from '@mui/icons-material/Email';
 
 const Hero = () => {
-    const StyledHero = styled("div") (()=> ({
-        backgroundColor: "black",
-        height: "100vh"
+    const StyledHero = styled("div") (({ theme })=> ({
+        backgroundColor: theme.palette.primary.main,
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
      }))
-     const StyledImg = styled("img") (()=> ({
-        width: "100%",
-        borderRadius: "50%"
+     const StyledImg = styled("img") (({theme})=> ({
+        width: "80%",
+        borderRadius: "50%",
+        border: '1px solid ${theme.palette.primary.contrastText}',
      }))
     return (
       <>
@@ -20,21 +23,22 @@ const Hero = () => {
           <Container maxWidth="lg">
             
             <Grid container spacing={2}>
-                    <Grid size ={4}>
+                    <Grid size ={5}>
                     <StyledImg src={foto} />
                     </Grid>
-                    <Grid size ={8}>
-                        <Typography color="primary" variant= "h1" textAlign="Center">Wedson Filho</Typography>
-                        <Typography color="primary" variant= "h2" textAlign="Center">Desenvolvedor FullStack</Typography>
-                        <Grid container display="flex" justifyContent="center">
+                    <Grid size ={7}>
+                        <Typography color="primary.contrastText" variant= "h1" textAlign="Center">Wedson Filho</Typography>
+                        <Typography color="primary.contrastText" variant= "h2" textAlign="Center">Desenvolvedor FullStack</Typography>
+                        <Grid container display="flex" justifyContent="center" pt={3} >
                           <Grid size={4} display="flex" justifyContent="center">
-                          <Button> <DownloadForOfflineIcon/>
-                         Download CV</Button>
+                          <Button color="secondary" variant="outlined" onClick={() => console.log ("download")}  component= "a" href="/curriculo 2025.pdf"
+                           dowload> <DownloadForOfflineIcon style={{ marginRight: "8px"}}/>
+                              Download CV</Button>
                         
                         </Grid>
                         <Grid size={4} display="flex" justifyContent="center">
-                          <Button> <EmailIcon/>
-                          Contato</Button>
+                          <Button color="secondary" variant="outlined" onClick={() => console.log("contato")}> <EmailIcon/>
+                                    Contato</Button>
                         </Grid>
                         </Grid>
                         
